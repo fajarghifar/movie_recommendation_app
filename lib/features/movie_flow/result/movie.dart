@@ -3,6 +3,14 @@ import 'package:movie_recommendation_app/features/movie_flow/genre/genre.dart';
 
 @immutable
 class Movie {
+  final String title;
+  final String overview;
+  final num voteAverage;
+  final List<Genre> genres;
+  final String releaseDate;
+  final String? backdropPath;
+  final String? posterPath;
+
   const Movie({
     required this.title,
     required this.overview,
@@ -12,14 +20,6 @@ class Movie {
     this.backdropPath,
     this.posterPath,
   });
-
-  final String title;
-  final String overview;
-  final num voteAverage;
-  final List<Genre> genres;
-  final String releaseDate;
-  final String? backdropPath;
-  final String? posterPath;
 
   Movie.initial()
       : title = '',
