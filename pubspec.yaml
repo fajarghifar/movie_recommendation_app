@@ -38,6 +38,7 @@ dependencies:
   flutter_riverpod: ^2.6.1
   envied: ^1.0.0
   dio: ^5.7.0
+  multiple_result: ^5.1.0
 
 dev_dependencies:
   flutter_test:
