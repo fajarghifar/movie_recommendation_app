@@ -46,10 +46,6 @@ class TMDBMovieService implements MovieService {
       final movies =
           movieEntities.map((e) => Movie.fromEntity(e, genres)).toList();
 
-      if (movies.isEmpty) {
-        return Error(Failure(message: 'No movies found'));
-      }
-
       final rnd = Random();
       final randomMovie = movies[rnd.nextInt(movies.length)];
       return Success(randomMovie);

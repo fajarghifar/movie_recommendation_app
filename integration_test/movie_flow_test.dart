@@ -1,11 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
 import 'package:movie_recommendation_app/core/widgets/primary_button.dart';
 import 'package:movie_recommendation_app/features/movie_flow/movie_repository.dart';
 import 'package:movie_recommendation_app/main.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
   testWidgets('test basic flow and see the fake generated movie in the end',
       (WidgetTester tester) async {
     await tester.pumpWidget(
