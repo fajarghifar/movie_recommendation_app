@@ -13,7 +13,6 @@ class YearsBackScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
@@ -62,7 +61,15 @@ class YearsBackScreen extends ConsumerWidget {
             ),
             const Spacer(),
             PrimaryButton(
-              onPressed: () => Navigator.of(context).push(ResultScreen.route()),
+              onPressed: () async {
+                await ref
+                    .read(movieFlowControllerProvider.notifier)
+                    .getRecommendedMovie();
+                // ignore: use_build_context_synchronously
+                Navigator.of(context).push(ResultScreen.route());
+              },
+              isLoading:
+                  ref.watch(movieFlowControllerProvider).movie is AsyncLoading,
               text: 'Amazing',
             ),
             const SizedBox(height: kMediumSpacing),
